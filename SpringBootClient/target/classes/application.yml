@@ -1,0 +1,26 @@
+server:
+  port: 8090    #port where the service will be started
+ 
+eureka:         #Eureka server details and refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8860/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+ 
+spring:    
+  application:
+    name: SpringBootClient   #service name which will be used by Eureka Server
+     
+management:
+  security:
+    enabled: false 
+ 
+logging:
+  level:
+    com.springrest: DEBUG
